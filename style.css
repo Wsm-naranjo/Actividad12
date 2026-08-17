@@ -1,0 +1,180 @@
+:root {
+  --fondo: #0f1115;
+  --panel: #171a21;
+  --acento: #4f8cff;
+  --acento-suave: #8fb4ff;
+  --blanco: #f4f6fb;
+  --gris: #8a8f9c;
+  --rojo: #ff5a5f;
+  --sombra: rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  background: radial-gradient(circle at top, #1b1f2a 0%, var(--fondo) 70%);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--blanco);
+  padding: 3rem 1.5rem;
+}
+
+.cabecera {
+  text-align: center;
+}
+
+.cabecera h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subtitulo {
+  margin-top: 0.4rem;
+  color: var(--gris);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.reloj {
+  padding: 1.5rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #1c2029, #12151c);
+  box-shadow:
+    0 20px 45px var(--sombra),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.cara-reloj {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 3px solid rgba(79, 140, 255, 0.25);
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.numero {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--acento-suave);
+}
+
+.doce  { top: 8px;  left: 50%; transform: translateX(-50%); }
+.seis  { bottom: 8px; left: 50%; transform: translateX(-50%); }
+.tres  { top: 50%;  right: 6px; transform: translateY(-50%); }
+.nueve { top: 50%;  left: 6px;  transform: translateY(-50%); }
+
+.uno   { top: 15%;  right: 18%; }
+.dos   { top: 34%;  right: 4%; }
+.cuatro{ bottom: 34%; right: 4%; }
+.cinco { bottom: 15%; right: 18%; }
+.siete { bottom: 15%; left: 18%; }
+.ocho  { bottom: 34%; left: 4%; }
+.diez  { top: 34%;  left: 4%; }
+.once  { top: 15%;  left: 18%; }
+
+.marcas {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: repeating-conic-gradient(
+    rgba(255, 255, 255, 0.35) 0deg 1deg,
+    transparent 1deg 6deg
+  );
+  -webkit-mask: radial-gradient(circle, transparent 92%, black 93%);
+          mask: radial-gradient(circle, transparent 92%, black 93%);
+}
+
+.aguja {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 6px;
+  background: var(--blanco);
+}
+
+.aguja.horas {
+  width: 6px;
+  height: 70px;
+  margin-left: -3px;
+  background: var(--blanco);
+}
+
+.aguja.minutos {
+  width: 4px;
+  height: 100px;
+  margin-left: -2px;
+  background: var(--acento-suave);
+}
+
+.aguja.segundos {
+  width: 2px;
+  height: 115px;
+  margin-left: -1px;
+  background: var(--rojo);
+}
+
+.centro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--rojo);
+  border: 3px solid var(--blanco);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.digital {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--acento-suave);
+  background: var(--panel);
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.pie {
+  color: var(--gris);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .cara-reloj {
+    width: 240px;
+    height: 240px;
+  }
+  .aguja.horas   { height: 55px; }
+  .aguja.minutos { height: 78px; }
+  .aguja.segundos{ height: 90px; }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "reloj-analogico",
+  "version": "1.0.0",
+  "description": "Actividad 12 - Testing: Reloj analogico dinamico con JS corregido",
+  "type": "commonjs",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.9"
+  }
+}

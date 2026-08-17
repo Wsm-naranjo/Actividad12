@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad 12 - Testing | Reloj Analógico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="cabecera">
+    <h1>Actividad 12.- Testing</h1>
+    <p class="subtitulo">Reloj analógico dinámico con JavaScript corregido</p>
+  </header>
+
+  <main class="contenedor">
+    <div class="reloj">
+      <div class="cara-reloj">
+
+        <!-- Números del reloj -->
+        <div class="numero doce">12</div>
+        <div class="numero uno">1</div>
+        <div class="numero dos">2</div>
+        <div class="numero tres">3</div>
+        <div class="numero cuatro">4</div>
+        <div class="numero cinco">5</div>
+        <div class="numero seis">6</div>
+        <div class="numero siete">7</div>
+        <div class="numero ocho">8</div>
+        <div class="numero nueve">9</div>
+        <div class="numero diez">10</div>
+        <div class="numero once">11</div>
+
+        <!-- Marcas de minutos -->
+        <div class="marcas"></div>
+
+        <!-- Agujas -->
+        <div id="aguja-horas" class="aguja horas"></div>
+        <div id="aguja-minutos" class="aguja minutos"></div>
+        <div id="aguja-segundos" class="aguja segundos"></div>
+
+        <!-- Centro -->
+        <div class="centro"></div>
+      </div>
+    </div>
+
+    <div class="digital" id="hora-digital">--:--:--</div>
+  </main>
+
+  <footer class="pie">
+    <p>Estudiante: Sebastian Naranjo · UNIB.E · Agosto 2026</p>
+  </footer>
+
+  <script src="reloj.js"></script>
+</body>
+</html>
